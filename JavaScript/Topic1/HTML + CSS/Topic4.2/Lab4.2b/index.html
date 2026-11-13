@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHome Solutions - Advanced Control Panel</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans:wght@400;500;700;800" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white justify-between">
+        <!-- Header -->
+        <div class="flex items-center bg-white p-4 pb-2 justify-between border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <div class="text-green-600 flex size-8 shrink-0 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM173.66,90.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,140.69l50.34-50.35A8,8,0,0,1,173.66,90.34Z"/>
+                    </svg>
+                </div>
+                <h1 class="text-gray-800 text-xl font-bold">EcoHome Advanced Control</h1>
+            </div>
+            <div class="status-indicator"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-4 space-y-6">
+            <!-- Temperature Control with Named Handlers -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Smart Temperature Control</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M134,154.34V40a6,6,0,0,0-12,0V154.34a26,26,0,1,0,12,0ZM128,192a14,14,0,1,1,14-14A14,14,0,0,1,128,192Zm-8-48V112a8,8,0,0,1,16,0v32a8,8,0,0,1-16,0Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="temp-display mb-4">
+                    <span id="currentTemp">70°F</span>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button id="tempDown" class="control-button">- Decrease</button>
+                    <button id="tempUp" class="control-button">+ Increase</button>
+                </div>
+                <div class="text-center mt-3">
+                    <span id="tempStatus" class="text-sm text-gray-600">Using named event handlers</span>
+                </div>
+            </div>
+
+            <!-- Energy Mode with Modular System -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Modular Energy Management</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <select id="energyMode" class="form-input mb-4">
+                    <option value="Standard">Standard Mode</option>
+                    <option value="Eco">Eco Mode</option>
+                    <option value="Maximum">Maximum Efficiency</option>
+                </select>
+                <div class="text-center">
+                    <span id="modeStatus" class="text-lg font-medium text-gray-700">Mode: Standard</span>
+                </div>
+            </div>
+
+            <!-- Device Configuration with Form Validation -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Device Configuration</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.6,107.6,0,0,0-10.88-26.25a8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3.06-3.05L221.4,40.5a8,8,0,0,0-3.94-6,107.29,107.29,0,0,0-26.25-10.87a8,8,0,0,0-7.06,1.49L165.51,40Q163.34,40,161.16,40l-18.64-14.92a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,109.21,34.5a8,8,0,0,0-3.93,6L102.64,64.27q-1.56,1.49-3.05,3.06L75.5,52.6a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25a8,8,0,0,0,1.49,7.06L74,108.49Q74,110.67,74,112.84L59.08,131.48a8,8,0,0,0-1.48,7.06,107.6,107.6,0,0,0,10.88,26.25a8,8,0,0,0,6,3.93l23.72,2.64q1.48,1.56,3.06,3.05L86.6,193.05a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87a8,8,0,0,0,7.06-1.49L143.49,194q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88a8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3.05-3.06L228,181.4a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25a8,8,0,0,0-1.49-7.06ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <form id="deviceForm">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Device Name</label>
+                        <input type="text" id="deviceName" class="form-input" placeholder="Enter device name (min 3 chars)..." maxlength="20" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="submit-button">Configure Device</button>
+                    </div>
+                </form>
+                <div id="configStatus" class="status-message" style="display: none;"></div>
+            </div>
+
+            <!-- Demo Section -->
+            <div class="demo-section">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Advanced Event Patterns</h3>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong>Step 1:</strong> Named event handlers are already complete
+                        <br><em>Temperature controls use named functions for better maintainability</em>
+                    </div>
+                    <div>
+                        <strong>Step 2:</strong> Add event object inspection using <span class="code-highlight">event.target.id</span>
+                        <br><em>Add 2 lines to determine which button was clicked using event properties</em>
+                    </div>
+                    <div>
+                        <strong>Step 3:</strong> Add form validation using <span class="code-highlight">preventDefault()</span>
+                        <br><em>Add 2 lines to show confirmation message on screen</em>
+                    </div>
+                    <div>
+                        <strong>Step 4:</strong> Add modular event system using <span class="code-highlight">named functions</span>
+                        <br><em>Add 1 line to complete the energy mode settings function</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global temperature variable
+        let currentTemp = 70;
+
+        // STEP 1: Named event handlers (pre-completed)
+        // WHAT THIS DOES: Uses named functions instead of anonymous functions for better maintainability
+        // Named handlers appear clearly in debugging tools and can be reused across elements
+        // Professional applications use named handlers for testing and code organization
+        // Demonstrates separation of event detection from event handling logic
+        
+        function adjustTemperature(event) {
+            console.log('Temperature adjustment requested via:', event.target.id);
+            
+            // STEP 2: Add event object inspection (add 2 lines)
+            // WHAT THIS DOES: Examines event.target.id to determine which button was clicked
+            // Event objects contain valuable context about user interactions
+            // Single handler can manage multiple elements by inspecting event properties
+            // Demonstrates dynamic behavior based on event source identification
+            
+            // INSTRUCTION: Add these 2 lines exactly:
+            // if (event.target.id === 'tempUp' && currentTemp < 90) { currentTemp++; updateTemperatureDisplay(); }
+            // if (event.target.id === 'tempDown' && currentTemp > 45) { currentTemp--; updateTemperatureDisplay(); }
+            
+         if (event.target.id === 'tempUp' && currentTemp < 90) { currentTemp++; updateTemperatureDisplay(); }
+        if (event.target.id === 'tempDown' && currentTemp > 45) { currentTemp--; updateTemperatureDisplay(); }
+            
+        }
+
+        function updateTemperatureDisplay() {
+            document.getElementById('currentTemp').textContent = currentTemp + '°F';
+            document.getElementById('tempStatus').textContent = 'Temperature: ' + currentTemp + '°F (Range: 45-90°F)';
+        }
+
+        function updateModeDisplay(mode) {
+            document.getElementById('modeStatus').textContent = 'Mode: ' + mode + ' (Temp: ' + currentTemp + '°F)';
+        }
+
+        console.log('EcoHome Advanced Control Panel Ready');
+        console.log('Setting up advanced event patterns...');
+        
+        // Attach named handlers to temperature buttons
+        document.getElementById('tempUp').addEventListener('click', adjustTemperature);
+        document.getElementById('tempDown').addEventListener('click', adjustTemperature);
+        
+        // STEP 3: Add form validation with preventDefault (add 2 lines)
+        // WHAT THIS DOES: Validates device name and prevents default form submission
+        // preventDefault() stops browser's automatic form submission behavior
+        // Shows confirmation message on screen instead of page reload for better UX
+        // Demonstrates control over browser default behaviors with user feedback
+        
+        document.getElementById('deviceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // INSTRUCTION: Add these 2 lines exactly:
+            // document.getElementById('configStatus').textContent = 'Device configured: ' + document.getElementById('deviceName').value;
+            // document.getElementById('configStatus').style.display = 'block';
+            
+           document.getElementById('configStatus').textContent = 'Device configured: ' + document.getElementById('deviceName').value;
+            document.getElementById('configStatus').style.display = 'block';
+            
+        });
+        
+
+        // STEP 4: Add modular energy mode system (add 1 line)
+        // WHAT THIS DOES: Creates organized, reusable functions for energy mode management
+        // Separates event detection from decision-making and UI updates
+        // Modular systems are easier to test, maintain, and extend
+        // Demonstrates professional event architecture patterns
+        
+        function handleModeChange(event) {
+            const mode = event.target.value;
+            applyModeSettings(mode);
+            updateModeDisplay(mode);
+        }
+        
+        function applyModeSettings(mode) {
+            const temps = {Standard: 70, Eco: 68, Maximum: 65};
+            
+            // INSTRUCTION: Add this 1 line exactly:
+            // currentTemp = temps[mode]; updateTemperatureDisplay();
+            
+          currentTemp = temps[mode]; updateTemperatureDisplay();
+            
+        }
+        
+
+        // Attach modular handler to energy mode dropdown
+        document.getElementById('energyMode').addEventListener('change', handleModeChange);
+        
+        console.log('Advanced event patterns ready');
+    </script>
+</body>
+</html>

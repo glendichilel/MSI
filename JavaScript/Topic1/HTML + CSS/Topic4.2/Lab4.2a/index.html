@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHome Solutions - Control Panel</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans:wght@400;500;700;800" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white justify-between">
+        <!-- Header -->
+        <div class="flex items-center bg-white p-4 pb-2 justify-between border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <div class="text-green-600 flex size-8 shrink-0 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM173.66,90.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,140.69l50.34-50.35A8,8,0,0,1,173.66,90.34Z"/>
+                    </svg>
+                </div>
+                <h1 class="text-gray-800 text-xl font-bold">EcoHome Control Panel</h1>
+            </div>
+            <div class="status-indicator"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-4 space-y-6">
+            <!-- Temperature Control -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Temperature Control</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M134,154.34V40a6,6,0,0,0-12,0V154.34a26,26,0,1,0,12,0ZM128,192a14,14,0,1,1,14-14A14,14,0,0,1,128,192Zm-8-48V112a8,8,0,0,1,16,0v32a8,8,0,0,1-16,0Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="temp-display mb-4">
+                    <span id="currentTemp">70°F</span>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button id="tempDown" class="control-button">- Decrease</button>
+                    <button id="tempUp" class="control-button">+ Increase</button>
+                </div>
+            </div>
+
+            <!-- Energy Mode Selection -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Energy Saving Mode</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <select id="energyMode" class="form-input mb-4">
+                    <option value="Standard">Standard Mode</option>
+                    <option value="Eco">Eco Mode</option>
+                    <option value="Maximum">Maximum Efficiency</option>
+                </select>
+                <div class="text-center">
+                    <span id="modeStatus" class="text-lg font-medium text-gray-700">Mode: Standard</span>
+                </div>
+            </div>
+
+            <!-- Device Configuration -->
+            <div class="control-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-gray-800 text-lg font-bold">Device Configuration</h2>
+                    <div class="text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.6,107.6,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3.06-3.05L221.4,40.5a8,8,0,0,0-3.94-6,107.29,107.29,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L165.51,40Q163.34,40,161.16,40l-18.64-14.92a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,109.21,34.5a8,8,0,0,0-3.93,6L102.64,64.27q-1.56,1.49-3.05,3.06L75.5,52.6a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L74,108.49Q74,110.67,74,112.84L59.08,131.48a8,8,0,0,0-1.48,7.06,107.6,107.6,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.48,1.56,3.06,3.05L86.6,193.05a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L143.49,194q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3.05-3.06L228,181.4a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Device Name</label>
+                    <input type="text" id="deviceName" class="form-input" placeholder="Enter device name..." maxlength="20">
+                </div>
+                <div class="text-center">
+                    <span id="charCount" class="text-sm text-gray-500">0/20 characters</span>
+                </div>
+            </div>
+
+            <!-- Demo Section -->
+            <div class="demo-section">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Activity Instructions</h3>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong>Step 1:</strong> Page ready event is already complete
+                        <br><em>DOMContentLoaded event listener ensures page is ready for interaction</em>
+                    </div>
+                    <div>
+                        <strong>Step 2:</strong> Add temperature control using <span class="code-highlight">click event</span>
+                        <br><em>Add 3 lines to make the temperature increase button interactive</em>
+                    </div>
+                    <div>
+                        <strong>Step 3:</strong> Add energy mode selection using <span class="code-highlight">change event</span>
+                        <br><em>Add 6 lines to respond when users change dropdown and adjust temperature</em>
+                    </div>
+                    <div>
+                        <strong>Step 4:</strong> Add device name input using <span class="code-highlight">input event</span>
+                        <br><em>Add 3 lines to show real-time character count as users type</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="flex gap-2 border-t border-gray-200 bg-white px-4 pb-3 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77Z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium">Dashboard</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-green-600" href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.6,107.6,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3.06-3.05L221.4,40.5a8,8,0,0,0-3.94-6,107.29,107.29,0,0,0-26.25-10.87a8,8,0,0,0-7.06,1.49L165.51,40Q163.34,40,161.16,40l-18.64-14.92a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,109.21,34.5a8,8,0,0,0-3.93,6L102.64,64.27q-1.56,1.49-3.05,3.06L75.5,52.6a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L74,108.49Q74,110.67,74,112.84L59.08,131.48a8,8,0,0,0-1.48,7.06,107.6,107.6,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.48,1.56,3.06,3.05L86.6,193.05a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87a8,8,0,0,0,7.06-1.49L143.49,194q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88a8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3.05-3.06L228,181.4a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25a8,8,0,0,0-1.49-7.06ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium">Controls</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM64,88a8,8,0,0,1,8-8H184a8,8,0,0,1,0,16H72A8,8,0,0,1,64,88Zm0,32a8,8,0,0,1,8-8H184a8,8,0,0,1,0,16H72A8,8,0,0,1,64,120Zm0,32a8,8,0,0,1,8-8H184a8,8,0,0,1,0,16H72A8,8,0,0,1,64,152Z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium">Settings</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium">Support</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // STEP 1: Page ready event (pre-completed)
+        // WHAT THIS DOES: Sets up interactive controls for the control panel
+        // JavaScript runs immediately when script tag is parsed
+        // Elements are accessible because script is placed after DOM elements
+        // Modern approach for immediate interactivity without waiting for page load
+        
+        console.log('EcoHome Control Panel Ready');
+        console.log('Setting up interactive controls...');
+        
+        // Temperature tracking variable
+        let currentTemp = 70;
+        
+        // STEP 2: Add temperature control click event (add 3 lines)
+        // WHAT THIS DOES: Adds click event listener to temperature increase button
+        // Click events are most common user interaction for buttons and controls
+        // Event listener connects user action (click) to interface change (temperature update)
+        // Demonstrates immediate visual feedback from user interactions
+        
+        // INSTRUCTION: Add these 3 lines exactly:
+        // document.getElementById('tempUp').addEventListener('click', function() {
+        //     if (currentTemp < 90) { currentTemp++; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+        // });
+        
+        document.getElementById('tempUp').addEventListener('click', function() {
+       if (currentTemp < 90) { currentTemp++; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+      });
+        
+
+        // STEP 3: Add energy mode selection change event (add 6 lines)
+        // WHAT THIS DOES: Adds change event listener to energy mode dropdown
+        // Change events fire when form control values are modified and focus leaves element
+        // this.value refers to the selected option value in the dropdown
+        // Demonstrates how form controls can trigger immediate interface updates
+        
+        // INSTRUCTION: Add these 6 lines exactly:
+        // document.getElementById('energyMode').addEventListener('change', function() {
+        //     document.getElementById('modeStatus').textContent = 'Mode: ' + this.value;
+        //     if (this.value === 'Eco') { currentTemp = 68; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+        //     if (this.value === 'Maximum') { currentTemp = 65; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+        //     if (this.value === 'Standard') { currentTemp = 70; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+        // });
+        
+      document.getElementById('energyMode').addEventListener('change', function() {
+    document.getElementById('modeStatus').textContent = 'Mode: ' + this.value;
+    if (this.value === 'Eco') { currentTemp = 68; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+    if (this.value === 'Maximum') { currentTemp = 65; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+    if (this.value === 'Standard') { currentTemp = 70; document.getElementById('currentTemp').textContent = currentTemp + '°F'; }
+    });
+        
+
+        // STEP 4: Add device name input event (add 3 lines)
+        // WHAT THIS DOES: Adds input event listener for real-time character counting
+        // Input events fire on every keystroke, providing immediate feedback
+        // this.value.length gets current text length for character counter
+        // Demonstrates live validation and user feedback patterns
+        
+        // INSTRUCTION: Add these 3 lines exactly:
+        // document.getElementById('deviceName').addEventListener('input', function() {
+        //     document.getElementById('charCount').textContent = this.value.length + '/20 characters';
+        // });
+        
+      document.getElementById('deviceName').addEventListener('input', function() {
+     document.getElementById('charCount').textContent = this.value.length + '/20 characters';
+      });
+        
+
+        // Additional interactive features for demo
+        // Add decrease temperature functionality
+        document.getElementById('tempDown').addEventListener('click', function() {
+            if (currentTemp > 45) {
+                currentTemp--;
+                document.getElementById('currentTemp').textContent = currentTemp + '°F';
+            }
+        });
+
+        console.log('All event listeners ready');
+    </script>
+</body>
+</html>
